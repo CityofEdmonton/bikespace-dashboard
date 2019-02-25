@@ -222,11 +222,11 @@ function(input, output, session) {
                                   "<b> Comment: </b>",
                                   values$data[,"comment"]), 
                    popupOptions = popupOptions(minWidth = 200, maxWidth = 200, maxHeight = 200)) %>%
-        setView(lng = -79.3892, lat = 43.6426, zoom = 12)
+        setView(lng = -113.4909, lat = 53.5444, zoom = 12)
     } else{
       leaflet() %>% 
         addTiles(urlTemplate = street_map, attribution = map_attr) %>%
-        setView(lng = -79.3892, lat = 43.6426, zoom = 12)
+        setView(lng = -113.4909, lat = 53.5444, zoom = 12)
     }
   })
   
