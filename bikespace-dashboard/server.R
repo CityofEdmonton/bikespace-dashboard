@@ -501,9 +501,6 @@ function(input, output, session) {
           dataLabels = list(enabled = TRUE)
         )) %>% 
       hc_tooltip(formatter = fntltp) %>% 
-      hc_legend(align = "right", layout = "vertical",
-                margin = 0, verticalAlign = "top",
-                symbolHeight = 500, itemMarginTop = 5) %>% 
       hc_colorAxis(stops= freq_colr, showInLegend = FALSE)
   })
   
