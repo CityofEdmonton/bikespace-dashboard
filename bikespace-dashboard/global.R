@@ -26,7 +26,7 @@ library("httr")
 
 # Data from API
 
-url <- "https://s3.amazonaws.com/bikespace-dashboard-assets/dashboard.json"
+url <- "https://bikespace.edmonton.ca/api/dashboarddata"
 doc <- getURL(url)
 api_data <- as.data.frame(fromJSON(doc, flatten = TRUE))
 
