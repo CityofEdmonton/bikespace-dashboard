@@ -4,4 +4,7 @@
 mkdir -p /var/log/shiny-server
 chown shiny.shiny /var/log/shiny-server
 
-exec shiny-server >> /var/log/shiny-server.log 2>&1
+# Swap in environment variable for app root.
+cat /etc/shiny-server/shiny-server-template.conf | sed 's@${APP_ROOT}@'$APP_ROOT'@' > /etc/shiny-server/shiny-server.conf
+
+exec shiny-server
