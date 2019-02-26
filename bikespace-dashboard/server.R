@@ -200,7 +200,7 @@ function(input, output, session) {
   map_attr <- "© <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a>"
   
   # Popup image link
-  pop_img_base <- "https://s3.amazonaws.com/bikeparking/"
+  pop_img_base <- "https://storage.googleapis.com/bikespace-yeg-photos/"
   
   output$map <- renderLeaflet({
     if(prob_choices() > 0){
