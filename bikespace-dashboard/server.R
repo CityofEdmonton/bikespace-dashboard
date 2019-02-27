@@ -1,6 +1,5 @@
 
 function(input, output, session) {
-  
   ## -- Sidebar Inputs -- ##
   
   probtype_choices <- reactive({
@@ -34,6 +33,9 @@ function(input, output, session) {
   # Set up reactive data format
   values <- reactiveValues()
   # Load in global data as default
+  ## -- Get data every time a new session is established. -- ##
+  rawLoadedData <- getData()
+  survey_data <- transformBikespace(rawLoadedData)
   values$data <- survey_data
   
   # Create dataframes for each filter
