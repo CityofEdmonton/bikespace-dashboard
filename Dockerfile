@@ -95,16 +95,15 @@ RUN R -e "install.packages(c('devtools', 'shiny', 'shinydashboard', 'RCurl', 'js
 
 RUN R -e "devtools::install_version('rmarkdown', version='1.8')" 
 
-COPY shiny-server.conf /etc/shiny-server/shiny-server-template.conf
-COPY /bikespace-dashboard /srv/shiny-server/
-COPY shiny-server.sh /usr/bin/shiny-server.sh
-
-
 EXPOSE 80
 
 ## install packages from github (and clean up)
 RUN Rscript -e "webshot::install_phantomjs()"
 RUN mv /root/bin/phantomjs /usr/bin
 RUN phantomjs --version
+
+COPY shiny-server.conf /etc/shiny-server/shiny-server-template.conf
+COPY /bikespace-dashboard /srv/shiny-server/
+COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 CMD ["/usr/bin/shiny-server.sh"]
